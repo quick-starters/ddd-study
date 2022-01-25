@@ -251,10 +251,17 @@ class UserName
 	private readonly string value;
   
 	public UserName(string value) {
-  	iF(value= null)thrownewArgumentNullException(nameof(value));
-		iF (name.Length < 3) throw new ArgumentException("사용자명은 3글자 이상이어야함", nameof(name));
+  	if (value = null)thrownewArgumentNullException(nameof(value));
+		if (name.Length < 3) throw new ArgumentException("사용자명은 3글자 이상이어야함", nameof(name));
     
 		this.value = value; 
+  }
+  
+  public ChangeName(string value) {
+    if (value = null)thrownewArgumentNullException(nameof(value));
+		if (name.Length < 3) throw new ArgumentException("사용자명은 3글자 이상이어야함", nameof(name));
+    
+    this.value = value;
   }
   
 	(...생략...) 
