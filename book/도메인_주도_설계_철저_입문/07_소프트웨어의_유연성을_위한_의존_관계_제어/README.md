@@ -156,7 +156,7 @@ public class UserApplicationService  {
     - 위 코드에서, UserApplicationService를 사용하기 위해서는 ServiceLocator에 미리 IUserRepository가 등록되어야 한다는 것을 알 수 없다.
   - 테스트 유지가 어렵다
     - 테스트 환경에서 ServiceLocator에 IUserRepository를 등록하지 않았거나 UserApplicationService에 ServiceLocator로부터 받아와야 하는 객체가 추가된 경우
-      - 테스트가 깨지긴 하겠지만, 컴파일 에러 등으로 강제하는 것은 아니기 때문에 테스트를 실행할 때까지 깨진 것을 알 수 없다
+      - 테스트가 깨지긴 하겠지만, 컴파일 에러 등으로 강제하는 것은 아니기 때문에 테스트를 실행할 때까지 깨진 것을 알 수 없다.
 
 
 
