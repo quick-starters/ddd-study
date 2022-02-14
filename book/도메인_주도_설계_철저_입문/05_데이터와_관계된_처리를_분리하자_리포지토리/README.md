@@ -93,8 +93,6 @@ class UserService
 
 마찬가지로 중복 체크하는 `UserService.Exists` 메소드 또한 처음부터 끝까지 관계형 데이터베이스를 다루는 코드밖에 없어 이해하기 쉽지 않다. 중복 금지 규칙을 확인하려면 쿼리를 자세히 봐야한다.
 
-
-
 사용자 생성 처리와 사용자명 중복 확인 처리 모두 바르게 동작하지만, 코드 대부분이 데이터스토어를 조작하는 인프라코드로 가득차 있어 의도를 이해하기 쉽지 않다. 코드의 의도를 더 잘 드러낼 수 있도록 퍼시스턴시를 리포지토리를 통해 추상화해서 다루게 수정하자.
 
 ```c#
@@ -366,8 +364,6 @@ Program 클래스는 IUserRepository를 다루지만 실제 객체는 UserReposi
 
 테스트만을 위한 특정 인프라를 갖추는건 어렵다. 이 문제를 해결하기 위해 메모리를 데이터스토어로 삼자.
 
-
-
 ```c#
 class InMemoryUserRepository : lUserRepository 
 {
@@ -578,6 +574,7 @@ public interface lUserRepository
 ```c#
 interface lUserRepository {
 	void UpdateName(Userld id, UserName name);
+  // void Update(User user);
 	(...생략...) 
 }
 ```
@@ -591,7 +588,7 @@ interface lUserRepository {
 ```c#
 interface lUserRepository
 {
-	void UpdateName(Userldid,UserNamename);
+	void UpdateName(Userld id, UserNamename);
 	void UpdateEmail(Userld id, Email mail);
 	void UpdateAddress(Userld id, Address address); (...생략...)
 }
